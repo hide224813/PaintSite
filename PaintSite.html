@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<title>PaintSite</title>
+<style>
+	h2{
+	font-color:red;
+	}
+	#mycanvas{
+	border : 5px solid #999;
+	cursor:crosshair;
+	display:inline-block;
+	}
+	#Bold{
+	border : 5px solid #999;
+	}
+	#Color{
+	border : 5px solid #999;
+	}
+	#siage{
+	margin:10px;
+	}
+	#main{
+	border : 5px solid #999;
+	margin:0px;
+	padding:0px;
+	}
+	#tab{
+	border : 5px solid #999;
+	margin:0px;
+	padding:0px;
+	}
+	.thumbnail{
+		border: 2px solid #999;
+		margin-right: 5px;
+	}
+</style>
+</head>
+<body>
+<h1>お絵描きサイト</h1>
+<p>
+	<select id ="PaintStyle">
+		<option value="rakugaki">落書き</option>
+		<option value="rakugaki2">落書き(荒)</option>
+		<option value="delete">消しゴム</option>
+		<option value="line">直線</option>
+		<option value="Rect1">四角</option>
+		<option value="Rect2">四角(塗り潰し)</option>
+		<option value="Circle1">円</option>
+		<option value="Circle2">円(塗り潰し)</option>
+<!--		<option value="fill">塗り潰し</option> -->
+<!--		<option value="text">テキスト</option> -->
+<!--		<option value="rand">乱数デザイン</option> -->
+	</select>
+	<input type="button" id="erase" value="消去">
+	<input type="button" id="save" value="ギャラリーに追加">
+
+	<form action="savefile.php" method="post">
+		<input type="file" name="file">
+		<input type="submit" />
+	</form>
+</p>
+<canvas id="mycanvas" width="370" height="320">
+Canvasに対応するブラウザを使用してください。<br>
+オススメはGoogleChromeです。<br>
+<a href="https://www.google.co.jp/chrome/browser/desktop/index.html">ダウンロードはこちら</a>
+</canvas>
+<div><canvas id="Bold" width="100" height="100"></canvas>
+<canvas id="Color" width="280" height="150"></canvas></div>
+<script src="./easyPaint.js"></script>
+</body>
+</html>
